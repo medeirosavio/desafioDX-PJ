@@ -88,7 +88,12 @@
 			<artifactId>flyway-core</artifactId>
 		</dependency>
 
-
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.30</version> <!-- ou a versão mais recente -->
+			<scope>provided</scope>
+		</dependency>
 
 	</dependencies>
 
