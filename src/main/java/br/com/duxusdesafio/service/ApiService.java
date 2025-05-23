@@ -87,5 +87,4 @@ public class ApiService {
         return frequenciaUtil.contarFrequencia(funcoes, Function.identity());
     }
 
-
 }
