@@ -22,9 +22,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 
-import static net.bytebuddy.matcher.ElementMatchers.any;
-import static org.hibernate.validator.internal.util.Contracts.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.ArgumentMatchers.anyList;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.*;
