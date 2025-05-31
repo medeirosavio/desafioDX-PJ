@@ -1,6 +1,5 @@
 package br.com.duxusdesafio.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.*;
 import javax.persistence.*;
 
@@ -16,11 +15,12 @@ public class ComposicaoTime {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "id_time", nullable = false)
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "id_integrante")
+    private Integrante integrante;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_time")
     private Time time;
 
-    @ManyToOne
-    @JoinColumn(name = "id_integrante", nullable = false)
-    private Integrante integrante;
 }

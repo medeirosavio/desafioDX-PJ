@@ -12,6 +12,8 @@ public class ComposicaoTimeDTO {
     private Long integranteId;
 
     public ComposicaoTimeDTO(ComposicaoTime composicaoTime) {
+        this.integranteId = composicaoTime.getIntegrante() != null
+                ? composicaoTime.getIntegrante().getId()
+                : null;
     }
 }
-

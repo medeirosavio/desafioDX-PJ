@@ -1,6 +1,5 @@
 package br.com.duxusdesafio.model;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 import javax.persistence.*;
 import java.time.LocalDate;

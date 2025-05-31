@@ -45,13 +45,20 @@ public class ApiService {
 
     public List<String> integrantesDoTimeMaisComum(LocalDate dataInicial, LocalDate dataFinal, List<Time> todosOsTimes) {
         parametrosValidatorHelper.validarParametros(dataInicial, dataFinal, todosOsTimes);
+
         Map<Time, Long> frequencias = timesFilterHelper.filtrarTimesEContarPorComposicao(
                 dataInicial,
                 dataFinal,
                 todosOsTimes,
                 ComposicaoTime::getTime
         );
+
         Time timeMaisComum = frequenciaUtil.encontrarMaisFrequente(frequencias);
+
+        if (timeMaisComum == null) {
+            throw new IllegalArgumentException("Nenhum time mais comum foi encontrado no período informado.");
+        }
+
         return timeMaisComum.getComposicao().stream()
                 .map(composicao -> composicao.getIntegrante().getNome())
                 .collect(Collectors.toList());
